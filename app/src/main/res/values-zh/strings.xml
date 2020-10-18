@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">下载器</string>
+    <string name="download_tips">通知</string>
+    <string name="download_download_fail">下载失败!</string>
+    <string name="download_current_downloading_progress">下载中:%s</string>
+    <string name="download_current_downloaded_length">已下载:%s</string>
+    <string name="download_paused">暂停</string>
+    <string name="download_trickter">你有一条新通知</string>
+    <string name="download_file_download">下载</string>
+    <string name="download_file_error">下载出错</string>
+    <string name="download_click_open">点击继续</string>
+    <string name="download_coming_soon_download">即将下载文件</string>
+
+</resources>
