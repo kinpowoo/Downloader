@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 					}
 				});*/
 
-	   // run2();
+	    run2();
     }
 
     private void run3() {
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
     private void run2() {
         final long begin = SystemClock.elapsedRealtime();
         DownloadImpl.with(getApplicationContext())
-                .url("http://shouji.360tpcdn.com/170918/93d1695d87df5a0c0002058afc0361f1/com.ss.android.article.news_636.apk")
+                .url("http://shouji.360tpcdn.com/170918/93d1695d87df5a0c0002058afc0361f1/com.ss.android.article.ne_636.apk")
                 .target(new File(getExternalCacheDir() + "/download/" + "public" + "/" + "news_636.apk"),
                         this.getPackageName() + ".DownloadFileProvider")
                 .enqueue();

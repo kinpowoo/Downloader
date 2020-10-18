@@ -188,7 +188,6 @@ public class DownloadNotifier {
                     mContext.getString(android.R.string.cancel),
                     buildCancelContent(mContext, mNotificationId, mDownloadTask.mUrl));
             mBuilder.addAction(mAction);
-
         }
         mBuilder.setContentTitle(this.mContent = mContext.getString(R.string.download_current_downloading_progress, (progress + "%")));
         this.setProgress(100, progress, false);
@@ -288,7 +287,7 @@ public class DownloadNotifier {
         setDeleteIntent(null);
         mBuilder.setSmallIcon(mDownloadTask.getDownloadDoneIcon());
         mBuilder.setContentTitle(mContext.getString(R.string.download_file_error)
-                +(reason==null?"":(","+reason)));
+                +(reason==null?"":("，"+reason)));
         mBuilder.setProgress(100, 100, false);
         long delayTime = getDelayTime();
         getNotificationUpdateQueue().postRunnable(new Runnable() {

@@ -9,15 +9,12 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-
-import com.download.sample.MainActivity;
 import com.download.sample.downloader.dispatcher_queue.DispatchThread;
 import com.download.sample.downloader.dispatcher_queue.GlobalQueue;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.lang.ref.WeakReference;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 
@@ -238,6 +235,8 @@ public class DownloadSubmitterImpl implements DownloadSubmitter {
         @Override
         public void run() {
             DownloadTask downloadTask = this.mDownloadTask;
+
+            Log.e("Downloader","mResult :"+mResult);
             try {
                 if (mResult == ERROR_USER_PAUSE) {
                     if (null != mDownloadNotifier) {
@@ -249,7 +248,8 @@ public class DownloadSubmitterImpl implements DownloadSubmitter {
                 } else if (mResult == ERROR_LOAD) {
                     downloadTask.completed();
                 } else {
-                    downloadTask.completed();
+                    downloadTask.error("未知原因");
+                    //downloadTask.completed();
                 }
                 boolean isCancelDispose = doCallback(mResult);
                 // Error
